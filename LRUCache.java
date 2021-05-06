@@ -48,7 +48,6 @@ public class LRUCache{
             {
                 PQNode startPQNode = pqHead;
                 while(startPQNode!=null){
-                    System.out.println(startPQNode.priority);
                     if(startPQNode.priority > priority){
                         currPQNode = new PQNode(priority, currQueue, startPQNode.prev, startPQNode);
                         startPQNode.prev.next = currPQNode;
