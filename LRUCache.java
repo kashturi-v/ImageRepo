@@ -46,8 +46,9 @@ public class LRUCache{
             }
             else
             {
-                PQNode startPQNode = pqHead.next;
+                PQNode startPQNode = pqHead;
                 while(startPQNode!=null){
+                    System.out.println(startPQNode.priority);
                     if(startPQNode.priority > priority){
                         currPQNode = new PQNode(priority, currQueue, startPQNode.prev, startPQNode);
                         startPQNode.prev.next = currPQNode;
@@ -56,6 +57,7 @@ public class LRUCache{
                     }
                     else if(startPQNode.priority == priority){
                         startPQNode.num.enterQ(newImageNode);
+                        return;
                     }
                     else{
                         startPQNode = startPQNode.next;
@@ -92,7 +94,7 @@ public class LRUCache{
                 this.imageRepo.remove(result.image.imageName);
                 return result;
             }
-            System.out.println("Unfortunately, the current user does not have the right permissions to delete any of these images.");
+            System.out.println("Unfortunately, the current user does not have the appropriate permissions to delete any of the saved images.");
             return null;
         }
     }
@@ -124,8 +126,12 @@ public class LRUCache{
         }
     }
 
-    public void deleteImageNode(String imageName){
+    public void deleteImageNode(String imageName, int priority){
         ImageNode imgNode = this.imageRepo.get(imageName);
+        if(imgNode.priority < priority){
+            System.out.println("Unforutnately, the current user does not have the appropriate permissions to delete image \""+ imageName+"\".");
+            return;
+        }
         //if this is the case, we know that it exists as a head
         if(imgNode.prev == null){
             PQNode startPQNode = this.pqHead;
@@ -165,11 +171,26 @@ public class LRUCache{
         {
             ImageNode imageNode = this.imageRepo.get(imageName);
             Image image = imageNode.image;
-            deleteImageNode(imageName);
+            deleteImageNode(imageName, imageNode.priority);
             enterPQ(image.imageName, image.imageLocation, imageNode.priority);
             return imageNode;
         }
         return null;
+    }
+
+    public String printLRUCache(){
+        String result = "";
+        PQNode startNode = this.pqHead;
+        while(startNode!=null){
+            result += "Priority: " + startNode.priority + "\n";
+            ImageNode startImage = startNode.num.head;
+            while(startImage!=null){
+                result += "\t" + startImage.image.imageName + "\n";
+                startImage = startImage.next;
+            }
+            startNode = startNode.next;
+        }
+        return result;
     }
 
 

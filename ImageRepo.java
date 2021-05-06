@@ -25,7 +25,8 @@ public class ImageRepo{
     }
 
     public void deleteSpecificImage(String imageName){
-        this.imageList.deleteImageNode(imageName);
+        int level = this.user.convertPosition();
+        this.imageList.deleteImageNode(imageName, level);
     }
 
     public String getImage(String imageName){
@@ -39,8 +40,22 @@ public class ImageRepo{
     }
 
     public static void main(String[] args){
-        //have command line input
+        
         ImageRepo imageRepo = new ImageRepo();
-
+        imageRepo.uploadImage("TESLA", "https://kash.com/tesla.png");
+        imageRepo.uploadImage("MERCEDES", "https://kash.com/mercedes.png");
+        imageRepo.uploadImage("BMW", "https://kash.com/bmw.png");
+        imageRepo.changeUser("Kate",3);
+        imageRepo.uploadImage("PORSCHE", "https://kate.com/porsche.png");
+        imageRepo.uploadImage("LAMBO", "https://kate.com/lambo.png");
+        imageRepo.changeUser("Ryan",2);
+        imageRepo.uploadImage("MUSTANG", "https://ryan.com/mustang.png");
+        System.out.println(imageRepo.imageList.printLRUCache());
+        imageRepo.deleteImageBySpecificUser();
+        imageRepo.deleteImageBySpecificUser();
+        imageRepo.deleteImageBySpecificUser();
+        imageRepo.deleteSpecificImage("TESLA");
+        System.out.println(imageRepo.getImage("TESLA"));
+        System.out.println(imageRepo.imageList.printLRUCache());
     }
 }
