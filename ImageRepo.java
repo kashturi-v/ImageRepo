@@ -39,6 +39,10 @@ public class ImageRepo{
         this.user = newUser;
     }
 
+    public String printList(){
+        return this.imageList.printLRUCache();
+    }
+
     public static void main(String[] args){
         
         ImageRepo imageRepo = new ImageRepo();
@@ -50,12 +54,12 @@ public class ImageRepo{
         imageRepo.uploadImage("LAMBO", "https://kate.com/lambo.png");
         imageRepo.changeUser("Ryan",2);
         imageRepo.uploadImage("MUSTANG", "https://ryan.com/mustang.png");
-        System.out.println(imageRepo.imageList.printLRUCache());
+        System.out.println(imageRepo.printList());
         imageRepo.deleteImageBySpecificUser();
         imageRepo.deleteImageBySpecificUser();
         imageRepo.deleteImageBySpecificUser();
         imageRepo.deleteSpecificImage("TESLA");
         System.out.println(imageRepo.getImage("TESLA"));
-        System.out.println(imageRepo.imageList.printLRUCache());
+        System.out.println(imageRepo.printList());
     }
 }
