@@ -9,6 +9,5 @@ public class PQNode{
         this.num = num;
         this.prev = prev;
         this.next = next;
-        
     }
 }

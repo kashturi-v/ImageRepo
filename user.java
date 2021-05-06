@@ -28,14 +28,16 @@ public class User{
         this.userName = userName;
     }
 
+    
+
     public int convertPosition()
     {
         switch(this.userPosition){
-            case UserPosition.DIRECTOR:
+            case DIRECTOR:
                 return 1;
-            case UserPosition.PROJECTMANAGER:
+            case PROJECTMANAGER:
                 return 2;
-            case UserPosition.SOFTWAREENGINEER:
+            case SOFTWAREENGINEER:
                 return 3;
             default:
                 return 4;  

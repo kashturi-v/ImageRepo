@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class LRUCache{
     PQNode pqHead;
     PQNode pqTail;
@@ -23,7 +25,7 @@ public class LRUCache{
             System.out.println("An image with the same name already exists, please choose try again with another name.");
             return;
         }
-        this.imageRepo.add(imageName, newImageNode);
+        this.imageRepo.put(imageName, newImageNode);
         if(this.pqHead == null){
            currPQNode = new PQNode(priority, currQueue, null, null);
            this.pqHead = currPQNode;
@@ -44,8 +46,8 @@ public class LRUCache{
             }
             else
             {
-                startPQNode = pqHead.next;
-                while(startPQNode){
+                PQNode startPQNode = pqHead.next;
+                while(startPQNode!=null){
                     if(startPQNode.priority > priority){
                         currPQNode = new PQNode(priority, currQueue, startPQNode.prev, startPQNode);
                         startPQNode.prev.next = currPQNode;
@@ -53,7 +55,7 @@ public class LRUCache{
                         return;
                     }
                     else if(startPQNode.priority == priority){
-                        startPQNode.num.enterQ();
+                        startPQNode.num.enterQ(newImageNode);
                     }
                     else{
                         startPQNode = startPQNode.next;
@@ -87,10 +89,10 @@ public class LRUCache{
                         this.pqTail.next = null;
                     }
                 }
-                this.imageRepo.remove(result.imageName);
+                this.imageRepo.remove(result.image.imageName);
                 return result;
             }
-            System.out.println("Unfortunately, the current user does not have the right permissions to delete any of these images.")
+            System.out.println("Unfortunately, the current user does not have the right permissions to delete any of these images.");
             return null;
         }
     }
@@ -116,7 +118,7 @@ public class LRUCache{
                     this.pqTail.next = null;
                 }
             }
-            this.imageRepo.remove(result.imageName);
+            this.imageRepo.remove(result.image.imageName);
             return result;
             
         }
@@ -127,7 +129,7 @@ public class LRUCache{
         //if this is the case, we know that it exists as a head
         if(imgNode.prev == null){
             PQNode startPQNode = this.pqHead;
-            while(startPQNode){
+            while(startPQNode!=null){
                 Queue queue = startPQNode.num;
                 if(queue.head == imgNode){
                     queue.popHeadQ();
@@ -139,7 +141,7 @@ public class LRUCache{
         }
         else if(imgNode.next == null){ //if this is the case, we know it exists as a tail
             PQNode startPQNode = this.pqHead;
-            while(startPQNode){
+            while(startPQNode!=null){
                 Queue queue = startPQNode.num;
                 if(queue.tail == imgNode){
                     queue.popTailQ();
