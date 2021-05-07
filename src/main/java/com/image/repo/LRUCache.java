@@ -1,6 +1,11 @@
 package com.image.repo;
 import java.util.HashMap;
 
+/**
+ * LRUCache hold the mainly functionality for our doubly linked priority queue, where each priority node hold another
+ * doubly linked queue of images. It has instances of the queue's head and tail, and a hashmap of the image's that come
+ * into the repo.
+ */
 public class LRUCache{
     PQNode pqHead;
     PQNode pqTail;
@@ -12,22 +17,36 @@ public class LRUCache{
         this.imageRepo = new HashMap<>();
     }
 
+    /**
+     * @desc
+     *   isEmptyPQ is used to determine whether the PQ is empty
+     * @return
+     *   (boolean) - returns whether it is empty or not
+     */
     public boolean isEmptyPQ(){
         return this.pqHead == null && this.pqTail == null;
     }
 
+    /**
+     * @param
+     *  imageName (String) - name of the new image
+     *  imageLocation (String) - location of the new image
+     *  priority (int) - priority of the current user
+     * @desc
+     *   enterPQ is used to add a new image to the queue, it adds the new image at the given priority
+     */
     public void enterPQ(String imageName, String imageLocation, int priority){
         Image newImage = new Image(imageName, imageLocation);
         ImageNode newImageNode = new ImageNode(newImage, priority);
         PQNode currPQNode;
         Queue currQueue = new Queue(newImageNode, newImageNode);
-
+        
         if(this.imageRepo.containsKey(imageName)){
             System.out.println("An image with the same name already exists, please choose try again with another name.");
             return;
         }
         this.imageRepo.put(imageName, newImageNode);
-        if(this.pqHead == null){
+        if(isEmptyPQ()){
            currPQNode = new PQNode(priority, currQueue, null, null);
            this.pqHead = currPQNode;
            this.pqTail = currPQNode;
@@ -69,6 +88,15 @@ public class LRUCache{
         }
     }
 
+    /**
+     * @param
+     *  priority (int) - priority of the current user
+     * @desc
+     *   leavePQ allows the current user to delete the least recently used image of the lowest priority, only
+     *   if the current user's priority is higher.
+     * @return
+     *   (ImageNode) - the image node that was deleted
+     */
     public ImageNode leavePQ(int priority){
         if(isEmptyPQ()){
             System.out.println("Unfortunately, image repo is empty.");
@@ -91,6 +119,13 @@ public class LRUCache{
         }
     }
 
+    /**
+     * @desc
+     *   leavePQ allows the current user to delete the least recently used image of the lowest priority, regardless
+     *   of the current user's level
+     * @return
+     *   (ImageNode) - the image node that was deleted
+     */
     public ImageNode leavePQ(){
         if(isEmptyPQ()){
             System.out.println("Unfortunately, image repo is empty.");
@@ -109,6 +144,13 @@ public class LRUCache{
         }
     }
 
+    /**
+     * @param
+     *   deleteNode(PQNode) - the PQNode that has no more images, and needs to be deleted
+     * @desc
+     *   deletePQ is used as a helper function to delete a priority from PQ, if there no  
+     *   more images exist at that priority
+     */
     public void deletePQ(PQNode deleteNode){
         if(this.pqHead == deleteNode && this.pqTail == deleteNode)
         {
@@ -129,6 +171,14 @@ public class LRUCache{
         }
     }
 
+    /**
+     * @param
+     *   imageName(String) - the name of the image
+     *   priority - the priority of the current user
+     * @desc
+     *   deleteImageNode allows users to delete a specific image under the condition that
+     *   the priority of the image is lower than the priority of the current user
+     */
     public void deleteImageNode(String imageName, int priority){
         ImageNode imgNode = this.imageRepo.get(imageName);
         if(imgNode.priority < priority){
@@ -140,7 +190,6 @@ public class LRUCache{
             PQNode startPQNode = this.pqHead;
             while(startPQNode!=null){
                 Queue queue = startPQNode.num;
-                System.out.println(startPQNode.priority);
                 if(queue.head == imgNode){
                     queue.popHeadQ();
                     //so in the case where its the last node in the queue, we have to delete the queue from the whole PQ
@@ -178,6 +227,14 @@ public class LRUCache{
         this.imageRepo.remove(imageName);
     }
 
+    /**
+     * @param
+     *   imageName(String) - the name of the image
+     * @desc
+     *   getImageNode gets the ImageNode corresponding to the image name
+     * @return 
+     *   (ImageNode) - returns the image node
+     */
     public ImageNode getImageNode(String imageName){
         if(this.imageRepo.containsKey(imageName))
         {
@@ -190,6 +247,12 @@ public class LRUCache{
         return null;
     }
 
+    /**
+     * @desc
+     *   printLRUCache is used as a helper function to return a string of the text formatted LRU queue
+     * @return 
+     *   (String) - return a string fromatted LRU queue.
+     */
     public String printLRUCache(){
         String result = "";
         PQNode startNode = this.pqHead;

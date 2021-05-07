@@ -1,5 +1,9 @@
 package com.image.repo;
 
+/**
+ * ImageNode is the node within the doubly linked Queue, each ImageNode refers 
+ * to the Image, the prev and next node, and the priority.
+ */
 class ImageNode{
     Image image;
     ImageNode prev;

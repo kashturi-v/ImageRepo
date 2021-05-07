@@ -1,0 +1,3 @@
+com/image/repo/ImageRepoTest.class
+com/image/repo/LRUCacheTest.class
+com/image/repo/QueueTest.class

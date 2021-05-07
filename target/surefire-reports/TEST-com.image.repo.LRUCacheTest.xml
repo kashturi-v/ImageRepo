@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.image.repo.LRUCacheTest" time="0.004" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="12"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/test-classes:/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/classes:/Users/kashturiv/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/kashturiv/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="12"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter7289774908918760947.jar /Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire 2021-05-07T15-02-37_388-jvmRun1 surefire10557093765711002030tmp surefire_08649246610251223854tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/test-classes:/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/classes:/Users/kashturiv/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/kashturiv/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/kashturiv"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2019-04-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter7289774908918760947.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="12.0.1+12"/>
+    <property name="user.name" value="kashturiv"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.16"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/kashturiv/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/2w/4bw8p8ns263gm7tpygm7chqr0000gn/T/"/>
+    <property name="java.version" value="12.0.1"/>
+    <property name="user.dir" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/Users/kashturiv/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="12.0.1+12"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="56.0"/>
+  </properties>
+  <testcase name="deleteImageNodeTailPQLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="deleteImageNodeHeadQueuePQLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="deleteImageNodeTailQueuePQLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addPriorityToTailSimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="invalidPermissionsLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addOneNodeSimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="deleteImageNodeHeadPQLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="deleteImageNodePQLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addMultipleNodeDifferentPrioritySimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addPriorityToHeadSimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="removeAllNodesLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="removeTailWholePriorityLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="getImageNodeUpdateLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addExisitingNodeSimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0.001"/>
+  <testcase name="createSimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="leaveEmptyLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="getImageNodeDoesNotExistLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="addMultipleNodesSamePrioritySimpleLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0"/>
+  <testcase name="deleteImageNodeHigherPriorityLRUCacheTest" classname="com.image.repo.LRUCacheTest" time="0.001"/>
+</testsuite>

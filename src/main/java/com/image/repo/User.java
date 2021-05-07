@@ -1,5 +1,8 @@
 package com.image.repo;
 
+/**
+ * UserPosition is used to determine the level/priority of each user from highest to lowest priority.
+ */
 enum UserPosition{
     DIRECTOR,
     PROJECTMANAGER,
@@ -7,6 +10,9 @@ enum UserPosition{
     BASELEVELENGINEER
 }
 
+/**
+ * User is used to keep account of each user, their name and position.
+ */
 public class User{
     UserPosition userPosition;
     String userName;
@@ -31,7 +37,13 @@ public class User{
     }
 
     
-
+    /**
+     * @desc
+     *   convertPosition is used to convert the position from a UserPosition to an int for easy 
+     *   use within the LRUCache
+     * @return
+     *   int - the converted position
+     */
     public int convertPosition()
     {
         switch(this.userPosition){
