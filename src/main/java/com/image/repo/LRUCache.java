@@ -81,15 +81,7 @@ public class LRUCache{
                 ImageNode result = currQueue.popTailQ();
                 if(currQueue.head == null)
                 {
-                    this.pqTail = this.pqTail.prev;
-                    if(this.pqTail == null)
-                    {
-                        this.pqHead = null;
-                    }
-                    else
-                    {
-                        this.pqTail.next = null;
-                    }
+                    deletePQ(this.pqTail);
                 }
                 this.imageRepo.remove(result.image.imageName);
                 return result;
@@ -109,20 +101,31 @@ public class LRUCache{
             ImageNode result = currQueue.popTailQ();
             if(currQueue.head == null)
             {
-                this.pqTail = this.pqTail.prev;
-
-                if(this.pqTail == null)
-                {
-                    this.pqHead = null;
-                }
-                else
-                {
-                    this.pqTail.next = null;
-                }
+                deletePQ(this.pqTail);
             }
             this.imageRepo.remove(result.image.imageName);
             return result;
             
+        }
+    }
+
+    public void deletePQ(PQNode deleteNode){
+        if(this.pqHead == deleteNode && this.pqTail == deleteNode)
+        {
+            this.pqHead = null;
+            this.pqTail = null;
+        }
+        else if(this.pqHead == deleteNode){
+            this.pqHead = deleteNode.next;
+            this.pqHead.prev = null;
+        }
+        else if(this.pqTail == deleteNode){
+            this.pqTail = deleteNode.prev;
+            this.pqTail.next = null;
+        }
+        else{
+            deleteNode.prev.next = deleteNode.next;
+            deleteNode.next.prev = deleteNode.prev;
         }
     }
 
@@ -137,8 +140,13 @@ public class LRUCache{
             PQNode startPQNode = this.pqHead;
             while(startPQNode!=null){
                 Queue queue = startPQNode.num;
+                System.out.println(startPQNode.priority);
                 if(queue.head == imgNode){
                     queue.popHeadQ();
+                    //so in the case where its the last node in the queue, we have to delete the queue from the whole PQ
+                    if(queue.head == null){
+                        deletePQ(startPQNode);
+                    }
                     this.imageRepo.remove(imageName);
                     return;
                 }
@@ -151,6 +159,9 @@ public class LRUCache{
                 Queue queue = startPQNode.num;
                 if(queue.tail == imgNode){
                     queue.popTailQ();
+                    if(queue.head == null){
+                        deletePQ(startPQNode);
+                    }
                     this.imageRepo.remove(imageName);
                     return;
                 }
@@ -162,6 +173,7 @@ public class LRUCache{
             ImageNode nextImgNode = imgNode.next;
             prevImgNode.next = nextImgNode;
             nextImgNode.prev = prevImgNode;
+            
         }
         this.imageRepo.remove(imageName);
     }
