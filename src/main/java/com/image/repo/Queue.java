@@ -9,6 +9,22 @@ class Queue {
     ImageNode head;
     ImageNode tail;
 
+    public ImageNode getHead() {
+        return this.head;
+    }
+
+    public void setHead(ImageNode head) {
+        this.head = head;
+    }
+
+    public ImageNode getTail() {
+        return this.tail;
+    }
+
+    public void setTail(ImageNode tail) {
+        this.tail = tail;
+    }
+
     public Queue(ImageNode head, ImageNode tail) {
         this.head = head;
         this.tail = tail;

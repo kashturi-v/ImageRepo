@@ -12,6 +12,38 @@ public class PQNode {
     PQNode next;
     PQNode prev;
 
+    public int getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public Queue getNum() {
+        return this.num;
+    }
+
+    public void setNum(Queue num) {
+        this.num = num;
+    }
+
+    public PQNode getNext() {
+        return this.next;
+    }
+
+    public void setNext(PQNode next) {
+        this.next = next;
+    }
+
+    public PQNode getPrev() {
+        return this.prev;
+    }
+
+    public void setPrev(PQNode prev) {
+        this.prev = prev;
+    }
+
     public PQNode(int priority, Queue num, PQNode prev, PQNode next) {
         this.priority = priority;
         this.num = num;

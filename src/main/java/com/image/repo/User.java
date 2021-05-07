@@ -15,6 +15,22 @@ public class User {
     UserPosition userPosition;
     String userName;
 
+    public UserPosition getUserPosition() {
+        return this.userPosition;
+    }
+
+    public void setUserPosition(UserPosition userPosition) {
+        this.userPosition = userPosition;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public User(int position, String userName) {
         switch (position) {
             case 1:

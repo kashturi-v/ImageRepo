@@ -13,6 +13,30 @@ public class LRUCache {
     PQNode pqTail;
     HashMap<String, ImageNode> imageRepo;
 
+    public PQNode getPqHead() {
+        return this.pqHead;
+    }
+
+    public void setPqHead(PQNode pqHead) {
+        this.pqHead = pqHead;
+    }
+
+    public PQNode getPqTail() {
+        return this.pqTail;
+    }
+
+    public void setPqTail(PQNode pqTail) {
+        this.pqTail = pqTail;
+    }
+
+    public HashMap<String, ImageNode> getImageRepo() {
+        return this.imageRepo;
+    }
+
+    public void setImageRepo(HashMap<String, ImageNode> imageRepo) {
+        this.imageRepo = imageRepo;
+    }
+
     public LRUCache() {
         this.pqHead = null;
         this.pqTail = null;
@@ -28,9 +52,9 @@ public class LRUCache {
     }
 
     /**
-     * @param imageName (String) - name of the new image
-     * @param imageLocation (String) - location of the new image 
-     * @param priority (int) - priority of the current user
+     * @param imageName     (String) - name of the new image
+     * @param imageLocation (String) - location of the new image
+     * @param priority      (int) - priority of the current user
      * @desc enterPQ is used to add a new image to the queue, it adds the new image
      *       at the given priority
      */
@@ -83,7 +107,7 @@ public class LRUCache {
     /**
      * @param priority (int) - priority of the current user
      * @desc leavePQ allows the current user to delete the least recently used image
-     * of the lowest priority, only if the current user's priority is higher.
+     *       of the lowest priority, only if the current user's priority is higher.
      * @return (ImageNode) - the image node that was deleted
      */
     public ImageNode leavePQ(int priority) {
@@ -108,7 +132,7 @@ public class LRUCache {
 
     /**
      * @desc leavePQ allows the current user to delete the least recently used image
-     * of the lowest priority, regardless of the current user's level
+     *       of the lowest priority, regardless of the current user's level
      * @return (ImageNode) - the image node that was deleted
      */
     public ImageNode leavePQ() {
@@ -129,7 +153,7 @@ public class LRUCache {
 
     /**
      * @param deleteNode(PQNode) - the PQNode that has no more images, and needs to
-     * be deleted
+     *                           be deleted
      * @desc deletePQ is used as a helper function to delete a priority from PQ, if
      *       there no more images exist at that priority
      */
@@ -151,7 +175,7 @@ public class LRUCache {
 
     /**
      * @param imageName(String) - the name of the image priority - the priority of
-     * the current user
+     *                          the current user
      * @desc deleteImageNode allows users to delete a specific image under the
      *       condition that the priority of the image is lower than the priority of
      *       the current user
@@ -223,7 +247,7 @@ public class LRUCache {
 
     /**
      * @desc printLRUCache is used as a helper function to return a string of the
-     * text formatted LRU queue
+     *       text formatted LRU queue
      * @return (String) - return a string fromatted LRU queue.
      */
     public String printLRUCache() {

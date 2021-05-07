@@ -9,6 +9,22 @@ class Image {
     String imageName;
     String imageLocation;
 
+    public String getImageName() {
+        return this.imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getImageLocation() {
+        return this.imageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+
     public Image(String imageName, String imageLocation) {
         this.imageName = imageName;
         this.imageLocation = imageLocation;
