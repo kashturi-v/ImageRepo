@@ -19,12 +19,12 @@ Images are saved in a priority queue according to the user level, each node with
 
 # Users can perform any of the following tasks
 
-    `changeUser(String userName, String userLevel)` - allows different users to make changes to the system
-    `deleteImageBySpecificUser()` - allows a specific user to delete any image of the same priority or lower
-    `deleteSpecificImage(String imageName)` - allows a user to delete a specific image if permissions allow
-    `uploadImage(String imageName, String imageLocation)` - allows a user to upload a new image at the current user's priority
-    `getImage(String imageName)` - get the location of a specific image
-    `printList()` - print out the list of image's in the system's repo
+- `changeUser(String userName, String userLevel)` - allows different users to make changes to the system
+- `deleteImageBySpecificUser()` - allows a specific user to delete any image of the same priority or lower
+- `deleteSpecificImage(String imageName)` - allows a user to delete a specific image if permissions allow
+- `uploadImage(String imageName, String imageLocation)` - allows a user to upload a new image at the current user's priority
+- `getImage(String imageName)` - get the location of a specific image
+- `printList()` - print out the list of image's in the system's repo
 
 # Example
     Simple test case:
