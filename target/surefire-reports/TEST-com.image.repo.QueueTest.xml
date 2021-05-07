@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter7289774908918760947.jar /Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire 2021-05-07T15-02-37_388-jvmRun1 surefire10557093765711002030tmp surefire_08649246610251223854tmp"/>
+    <property name="sun.java.command" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter16858048759448275537.jar /Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire 2021-05-07T14-14-15_936-jvmRun1 surefire13849869959325105603tmp surefire_016176624587287462545tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/test-classes:/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/classes:/Users/kashturiv/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/kashturiv/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter7289774908918760947.jar"/>
+    <property name="surefire.real.class.path" value="/Users/kashturiv/Documents/FALL2021INTERNSHIPS/shopify-challenge/target/surefire/surefirebooter16858048759448275537.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="12.0.1+12"/>
@@ -57,7 +57,7 @@
   </properties>
   <testcase name="popHeadOneNodeQueueTest" classname="com.image.repo.QueueTest" time="0"/>
   <testcase name="createOneNodeQueueTest" classname="com.image.repo.QueueTest" time="0"/>
-  <testcase name="popTailOneNodeQueueTest" classname="com.image.repo.QueueTest" time="0"/>
+  <testcase name="popTailOneNodeQueueTest" classname="com.image.repo.QueueTest" time="0.001"/>
   <testcase name="popHeadAndTailMultipleNodeQueue_2Test" classname="com.image.repo.QueueTest" time="0"/>
   <testcase name="popHeadAndTailMultipleNodeQueueTest" classname="com.image.repo.QueueTest" time="0"/>
   <testcase name="popTailMultipleNodeQueueTest" classname="com.image.repo.QueueTest" time="0"/>
