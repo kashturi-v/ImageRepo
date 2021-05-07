@@ -1,24 +1,22 @@
 package com.image.repo;
 
 /**
- * UserPosition is used to determine the level/priority of each user from highest to lowest priority.
+ * UserPosition is used to determine the level/priority of each user from
+ * highest to lowest priority.
  */
-enum UserPosition{
-    DIRECTOR,
-    PROJECTMANAGER,
-    SOFTWAREENGINEER,
-    BASELEVELENGINEER
+enum UserPosition {
+    DIRECTOR, PROJECTMANAGER, SOFTWAREENGINEER, BASELEVELENGINEER
 }
 
 /**
  * User is used to keep account of each user, their name and position.
  */
-public class User{
+public class User {
     UserPosition userPosition;
     String userName;
 
-    public User(int position, String userName){
-        switch(position){
+    public User(int position, String userName) {
+        switch (position) {
             case 1:
                 this.userPosition = UserPosition.DIRECTOR;
                 break;
@@ -30,23 +28,19 @@ public class User{
                 break;
             case 4:
                 this.userPosition = UserPosition.BASELEVELENGINEER;
-                break; 
-               
+                break;
+
         }
         this.userName = userName;
     }
 
-    
     /**
-     * @desc
-     *   convertPosition is used to convert the position from a UserPosition to an int for easy 
-     *   use within the LRUCache
-     * @return
-     *   int - the converted position
+     * @desc convertPosition is used to convert the position from a UserPosition to
+     *       an int for easy use within the LRUCache
+     * @return int - the converted position
      */
-    public int convertPosition()
-    {
-        switch(this.userPosition){
+    public int convertPosition() {
+        switch (this.userPosition) {
             case DIRECTOR:
                 return 1;
             case PROJECTMANAGER:
@@ -54,10 +48,8 @@ public class User{
             case SOFTWAREENGINEER:
                 return 3;
             default:
-                return 4;  
+                return 4;
         }
     }
 
 }
-
-
