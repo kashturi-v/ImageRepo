@@ -51,5 +51,9 @@ Images are saved in a priority queue according to the user level, each node with
         PORSCHE
 
 # Running the code 
+To compile the project, please run the following code in your terminal:
+    `javac ./src/main/java/com/image/repo/*.java -d ./target/classes`
 To run this project, please run the following code in your terminal:
-    `javac ImageRepo.java && java ImageRepo`
+    `java -Dfile.encoding=UTF-8 -cp ./target/classes com.image.repo.ImageRepo`
+To run the project's JUnit test case, please run the following code in your terminal:
+    `mvn clean test`

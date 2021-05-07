@@ -4,13 +4,13 @@ import org.junit.Test;
 
 public class QueueTest{
     @Test
-    public void createSimpleNullQueue(){
+    public void createSimpleNullQueueTest(){
         Queue simpleQueue = new Queue(null, null);
         assertTrue(simpleQueue.head == null && simpleQueue.tail == null);
     }
 
     @Test
-    public void createOneNodeQueue(){
+    public void createOneNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         ImageNode imgNode = new ImageNode(img, 1);
         Queue simpleQueue = new Queue(null, null);
@@ -19,7 +19,7 @@ public class QueueTest{
     }
 
     @Test
-    public void createMultipleNodeQueue(){
+    public void createMultipleNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         Image img2 = new Image("TESTER_IMAGE_2", "https://kash.com/tester_2");
         ImageNode imgNode = new ImageNode(img, 1);
@@ -32,7 +32,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popHeadOneNodeQueue(){
+    public void popHeadOneNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         ImageNode imgNode = new ImageNode(img, 1);
         Queue simpleQueue = new Queue(null, null);
@@ -44,7 +44,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popHeadMultipleNodeQueue(){
+    public void popHeadMultipleNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         Image img2 = new Image("TESTER_IMAGE_2", "https://kash.com/tester_2");
         ImageNode imgNode = new ImageNode(img, 1);
@@ -60,7 +60,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popTailOneNodeQueue(){
+    public void popTailOneNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         ImageNode imgNode = new ImageNode(img, 1);
         Queue simpleQueue = new Queue(null, null);
@@ -72,7 +72,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popTailMultipleNodeQueue(){
+    public void popTailMultipleNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         Image img2 = new Image("TESTER_IMAGE_2", "https://kash.com/tester_2");
         ImageNode imgNode = new ImageNode(img, 1);
@@ -88,7 +88,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popHeadAndTailMultipleNodeQueue(){
+    public void popHeadAndTailMultipleNodeQueueTest(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         Image img2 = new Image("TESTER_IMAGE_2", "https://kash.com/tester_2");
         ImageNode imgNode = new ImageNode(img, 1);
@@ -106,7 +106,7 @@ public class QueueTest{
     }
 
     @Test
-    public void popHeadAndTailMultipleNodeQueue_2(){
+    public void popHeadAndTailMultipleNodeQueue_2Test(){
         Image img = new Image("TESTER_IMAGE", "https://kash.com/tester");
         Image img2 = new Image("TESTER_IMAGE_2", "https://kash.com/tester_2");
         Image img3 = new Image("TESTER_IMAGE_3", "https://kash.com/tester_3");

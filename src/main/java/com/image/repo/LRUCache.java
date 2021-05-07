@@ -140,7 +140,6 @@ public class LRUCache{
             PQNode startPQNode = this.pqHead;
             while(startPQNode!=null){
                 Queue queue = startPQNode.num;
-                System.out.println(startPQNode.priority);
                 if(queue.head == imgNode){
                     queue.popHeadQ();
                     //so in the case where its the last node in the queue, we have to delete the queue from the whole PQ

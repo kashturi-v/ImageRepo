@@ -4,13 +4,13 @@ import org.junit.Test;
 
 public class LRUCacheTest{
     @Test
-    public void createSimpleLRUCache(){
+    public void createSimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
     }
 
     @Test
-    public void addOneNodeSimpleLRUCache(){
+    public void addOneNodeSimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
 
@@ -22,7 +22,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void addMultipleNodesSamePrioritySimpleLRUCache(){
+    public void addMultipleNodesSamePrioritySimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
 
@@ -35,7 +35,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void addMultipleNodeDifferentPrioritySimpleLRUCache(){
+    public void addMultipleNodeDifferentPrioritySimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
 
@@ -48,7 +48,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void addExisitingNodeSimpleLRUCache(){
+    public void addExisitingNodeSimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -57,7 +57,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void addPriorityToHeadSimpleLRUCache(){
+    public void addPriorityToHeadSimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 2);
@@ -69,7 +69,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void addPriorityToTailSimpleLRUCache(){
+    public void addPriorityToTailSimpleLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -81,21 +81,21 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void leaveEmptyLRUCache(){
+    public void leaveEmptyLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         assertTrue(cache.leavePQ() == null);
     }
 
     @Test
-    public void invalidPermissionsLRUCache(){
+    public void invalidPermissionsLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         assertTrue(cache.leavePQ() == null);
     }
 
     @Test
-    public void removeTailWholePriorityLRUCache(){
+    public void removeTailWholePriorityLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -106,7 +106,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void removeAllNodesLRUCache(){
+    public void removeAllNodesLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 2);
@@ -118,7 +118,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodeHeadPQLRUCache(){
+    public void deleteImageNodeHeadPQLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 2);
@@ -129,7 +129,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodeTailPQLRUCache(){
+    public void deleteImageNodeTailPQLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 2);
@@ -140,7 +140,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodeHigherPriorityLRUCache(){
+    public void deleteImageNodeHigherPriorityLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 2);
@@ -150,7 +150,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodeHeadQueuePQLRUCache(){
+    public void deleteImageNodeHeadQueuePQLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -160,7 +160,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodeTailQueuePQLRUCache(){
+    public void deleteImageNodeTailQueuePQLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -170,7 +170,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void deleteImageNodePQLRUCache(){
+    public void deleteImageNodePQLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -181,7 +181,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void getImageNodeDoesNotExistLRUCache(){
+    public void getImageNodeDoesNotExistLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
@@ -189,7 +189,7 @@ public class LRUCacheTest{
     }
 
     @Test
-    public void getImageNodeUpdateLRUCache(){
+    public void getImageNodeUpdateLRUCacheTest(){
         LRUCache cache = new LRUCache();
         assertTrue(cache.imageRepo.size() == 0);
         cache.enterPQ("TESTER_IMAGE", "https://kash.com/tester", 1);
