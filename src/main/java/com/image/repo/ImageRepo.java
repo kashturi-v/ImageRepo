@@ -19,8 +19,8 @@ public class ImageRepo {
     }
 
     /**
-     * @param imageName (String) - the name of the image imageLocation (String) -
-     *                  the location of the image
+     * @param imageName (String) - the name of the image
+     * @param imageLocation (String) - the location of the image
      * @desc uploadImage is used to upload images to the the system's repository
      */
     public void uploadImage(String imageName, String imageLocation) {
@@ -36,7 +36,7 @@ public class ImageRepo {
 
     /**
      * @desc deleteImageBySpecificUser is used to delete images only if the current
-     *       user has the neccesary permissions to do so
+     * user has the neccesary permissions to do so
      */
     public void deleteImageBySpecificUser() {
         int level = this.user.convertPosition();
@@ -46,7 +46,7 @@ public class ImageRepo {
     /**
      * @param imageName (String) - the name of the image
      * @desc deleteSpecificImage is used to delete a specific images only if the
-     *       current user has the neccesary permissions to do so
+     * current user has the neccesary permissions to do so
      */
     public void deleteSpecificImage(String imageName) {
         int level = this.user.convertPosition();
@@ -55,8 +55,7 @@ public class ImageRepo {
 
     /**
      * @param imageName (String) - the name of the image
-     * @desc getImage is used to retrieve the image location according to the image
-     *       name
+     * @desc getImage is used to retrieve the image location according to the image name
      * @return (String) - the location of the image
      */
     public String getImage(String imageName) {
@@ -65,11 +64,10 @@ public class ImageRepo {
     }
 
     /**
-     * @param userName (String) - the new user's name userLevel (int) - the new
-     *                 user's level, this is used to determine priority and
-     *                 permission
+     * @param userName (String) - the new user's name
+     * @param userLevel (int) - the new user's level
      * @desc changeUser is used to change the information of the current user who is
-     *       using the image repo
+     * using the image repo
      */
     public void changeUser(String userName, int userLevel) {
         User newUser = new User(userLevel, userName);

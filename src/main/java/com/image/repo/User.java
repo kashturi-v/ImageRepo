@@ -5,7 +5,7 @@ package com.image.repo;
  * highest to lowest priority.
  */
 enum UserPosition {
-    DIRECTOR, PROJECTMANAGER, SOFTWAREENGINEER, BASELEVELENGINEER
+    DIRECTOR, PROJECT_MANAGER, SOFTWARE_ENGINEER, BASELEVEL_ENGINEER
 }
 
 /**
@@ -21,13 +21,13 @@ public class User {
                 this.userPosition = UserPosition.DIRECTOR;
                 break;
             case 2:
-                this.userPosition = UserPosition.PROJECTMANAGER;
+                this.userPosition = UserPosition.PROJECT_MANAGER;
                 break;
             case 3:
-                this.userPosition = UserPosition.SOFTWAREENGINEER;
+                this.userPosition = UserPosition.SOFTWARE_ENGINEER;
                 break;
             case 4:
-                this.userPosition = UserPosition.BASELEVELENGINEER;
+                this.userPosition = UserPosition.BASELEVEL_ENGINEER;
                 break;
 
         }
@@ -43,9 +43,9 @@ public class User {
         switch (this.userPosition) {
             case DIRECTOR:
                 return 1;
-            case PROJECTMANAGER:
+            case PROJECT_MANAGER:
                 return 2;
-            case SOFTWAREENGINEER:
+            case SOFTWARE_ENGINEER:
                 return 3;
             default:
                 return 4;
