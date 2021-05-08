@@ -77,7 +77,7 @@ public class ImageRepo {
      */
     public String getImage(String imageName) {
         ImageNode imageNode = this.imageList.getImageNode(imageName);
-        return imageNode.image.imageLocation;
+        return imageNode.getImage().getImageLocation();
     }
 
     /**
